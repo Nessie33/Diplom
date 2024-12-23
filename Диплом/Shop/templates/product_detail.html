@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>{{ product.name }}</h1>
+    <h3>Описание:</h3> {{ product.description }}
+    <h3>Категория:</h3>{{ product.category.name }}
+    <h3>Цена:</h3> {{ product.price }}
+
+    <h2>Оформить заказ</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Купить</button>
+    </form>
+
+    <h3><a href="{% url 'product_list' %}">Назад к списку</a></h3>
+</body>
+</html>
