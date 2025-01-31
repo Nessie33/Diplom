@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <h2>Admin</h2>
+    <h3>Добавление товара</h3>
+    <form action="{{ url_for('admin') }}" method="post" class="mb-4">
+        <input type="text" name="name" placeholder="Название товара" required class="form-control mb-2" />
+        <input type="number" name="price" placeholder="Цена" required step="0.01" class="form-control mb-2" />
+        <button type="submit" name="add" class="btn btn-primary">Добавить товар</button>
+    </form>
+
+    <h3>Удаление товара</h3>
+    <form action="{{ url_for('admin') }}" method="post" class="mb-4">
+        <input type="text" name="delete_name" placeholder="Название товара для удаления" required class="form-control mb-2" />
+        <button type="submit" name="delete" class="btn btn-danger">Удалить товар</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <h2>Товары</h2>
+    <ul class="list-group mb-4">
+        {% for product in products %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                {{ product.name }} - ${{ product.price }}
+                <a href="{{ url_for('product_detail', product_id=product.id) }}" class="btn btn-info btn-sm">Подробнее</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
